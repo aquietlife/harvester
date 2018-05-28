@@ -4,105 +4,69 @@
 
 ## Parts
 
-1x Harvester Board
+A list of parts and costs can be found on this [Google Sheet](https://docs.google.com/spreadsheets/d/1l5mX_4e5-Yf7ezj4Uyb-OJHwEcOEgB5TfozrZ1NfUMg/edit?usp=sharing)
 
-3x 3.9k resistor
+# Installation Instructions
 
-1x EEPROM chip (which one?)
+* Download Raspian Image
 
-10x buttons
+* Flash to SD cards (do this before the workshop)
 
-1x header pin set
+* Touch ssh file in boot directory to enable SSH
 
-1x 5v regulator
+* Connect RPi to Wifi with battery (can’t do right now)
 
-1x 9v battery holder
+* Connecting w Ethernet and Raspi power works
 
-1x switch
+* Check:
 
-1x barrel wall power - very necessary
+* Power w 9V and ethernet - works
 
+* Power w 9v and wifi - doesn’t work
 
+* Once RPi is setup and connected to Wifi, try these instructions:
 
-1x Raspberry Pi 3
+* https://www.hackster.io/shiva-siddharth/make-your-own-google-voice-hat-9f96ca
 
-1x Raspberry Pi 3 charger
+* Added bcm2708.vc_i2c_override=1 to cmdline.txt
 
-1x 8gb micro SD with full-size SD card adapter and USB reader for computer
+* https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=87715
 
+* https://www.raspberrypi.org/forums/viewtopic.php?t=108134
 
+* Enabled i2c arm from raspi-config
 
-1x 12S Amp (for speaker)
+* Test Audio
 
-2x 12S Microphone
+* https://www.raspberrypi-spy.co.uk/2013/06/raspberry-pi-command-line-audio/
 
-1x Speaker
+* https://www.raspberrypi.org/forums/viewtopic.php?t=12358
 
+* sudo arecord test.wav
 
+* sudo aplay test.wav
 
-1x Enclosure (not made yet)
+* sudo aplay /usr/share/sounds/alsa/Front_Center.wav
 
-
-
-Instructions:
-
-
-
-Download Raspian Image
-
-Flash to SD cards (do this before the workshop)
-
-https://desertbot.io/blog/headless-raspberry-pi-3-bplus-ssh-wifi-setup
-
-https://styxit.com/2017/03/14/headless-raspberry-setup.html    
-
-http://ivanx.com/raspberrypi/
-
-Touch ssh file in boot directory
-
-Connect RPi to Wifi with battery (can’t do right now)
-
-Connecting w Ethernet and Raspi power works
-
-Check:
-
-Power w 9V and ethernet - works
-
-Power w 9v and wifi - doesn’t work
-
-Once RPi is setup and connected to Wifi, try these instructions:
-
-https://www.hackster.io/shiva-siddharth/make-your-own-google-voice-hat-9f96ca
-
-Added bcm2708.vc_i2c_override=1 to cmdline.txt
-
-https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=87715
-
-https://www.raspberrypi.org/forums/viewtopic.php?t=108134
-
-Enabled i2c arm from raspi-config
-
-Test Audio
-
-https://www.raspberrypi-spy.co.uk/2013/06/raspberry-pi-command-line-audio/
+* https://learn.adafruit.com/usb-audio-cards-with-a-raspberry-pi/recording-audio
 
 
-https://www.raspberrypi.org/forums/viewtopic.php?t=12358
+## References
 
-sudo arecord test.wav
+### Setting up Raspberry Pi
 
-sudo aplay test.wav
+* https://desertbot.io/blog/headless-raspberry-pi-3-bplus-ssh-wifi-setup
 
-sudo aplay /usr/share/sounds/alsa/Front_Center.wav
+* https://styxit.com/2017/03/14/headless-raspberry-setup.html    
 
-https://learn.adafruit.com/usb-audio-cards-with-a-raspberry-pi/recording-audio
+* http://ivanx.com/raspberrypi/
 
+### Misc
 
-References:
+* https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 
-https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
-
-Credits:
+## Credits
 
 Voice sample: Miyu Hosoi
+
 Circuit layout: Mark Kleeb
