@@ -6,7 +6,7 @@
 
 A list of parts and costs can be found on this [Google Sheet](https://docs.google.com/spreadsheets/d/1l5mX_4e5-Yf7ezj4Uyb-OJHwEcOEgB5TfozrZ1NfUMg/edit?usp=sharing)
 
-# Installation Instructions
+## Installation Instructions
 
 * Download Raspian Image
 
