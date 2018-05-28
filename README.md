@@ -101,3 +101,8 @@ https://learn.adafruit.com/usb-audio-cards-with-a-raspberry-pi/recording-audio
 References:
 
 https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
+
+Credits:
+
+Voice sample: Miyu Hosoi
+Circuit layout: Mark Kleeb
