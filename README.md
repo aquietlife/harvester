@@ -56,7 +56,9 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 ### Autostart software
 
-Add the following lines to the bottom of 
+Add the following lines to the bottom of /home/pi/.bashrc
+
+`vim /home/pi/.bashrc`
 
 ```
 if pgrep -x "python" > /dev/null
