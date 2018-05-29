@@ -50,6 +50,33 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 * https://learn.adafruit.com/usb-audio-cards-with-a-raspberry-pi/recording-audio
 
+### Install Python OSC server
+
+### Install Pd
+
+### Autostart software
+
+Add the following lines to the bottom of 
+
+```
+if pgrep -x "python" > /dev/null
+then
+    echo "Python is already runnning"
+else
+    echo "Python is not running, attempting to run Python"
+	python cloudbursting/rpi/gpio-osc.py >/dev/null 2>&1 &
+fi
+
+if pgrep -x "pd" > /dev/null
+then
+    echo "Pd is already running"
+else
+    echo "Pd is not running, attempting to run Pd"
+	pd -stderr -nogui -verbose -audiodev 4 cloudbursting/rpi/cloudbursting.pd >/dev/null 2>&1 &
+fi
+```
+
+
 
 ## References
 
