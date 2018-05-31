@@ -8,7 +8,7 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 ## Installation Instructions
 
-## Solder up Harvester hat
+### Solder up Harvester hat
 
 * Instructions TBD, look at parts list
 
