@@ -1,6 +1,7 @@
 # Harvester
 
 ![Harvester Illustration](https://raw.githubusercontent.com/aquietlife/harvester/master/harvester.jpg)
+Illustration by [Seo Hye Lee](http://www.seohyelee.com/)
 
 ## Parts
 
@@ -69,6 +70,8 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 * Install Pd libraries
 
 ### Install Harvester Software
+
+![Harvester Pd Software](https://raw.githubusercontent.com/aquietlife/harvester/master/software/raspberrypi/harvester-pd.png)
 
 * Install this repo
 
