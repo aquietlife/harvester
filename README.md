@@ -8,6 +8,12 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 ## Installation Instructions
 
+### Solder up Harvester hat
+
+* Instructions TBD, look at parts list
+
+### Install Raspian for Raspberry Pi
+
 * Download Raspian Image
 
 * Flash to SD cards (do this before the workshop)
@@ -26,6 +32,8 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 * Once RPi is setup and connected to Wifi, try these instructions:
 
+### Set up EEPROM chip for amp and microphone
+
 * https://www.hackster.io/shiva-siddharth/make-your-own-google-voice-hat-9f96ca
 
 * Added bcm2708.vc_i2c_override=1 to cmdline.txt
@@ -36,7 +44,7 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 * Enabled i2c arm from raspi-config
 
-* Test Audio
+### Test Audio and Microphone
 
 * https://www.raspberrypi-spy.co.uk/2013/06/raspberry-pi-command-line-audio/
 
@@ -52,7 +60,21 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 ### Install Python OSC server
 
+* install pyOSC
+
 ### Install Pd
+
+* Install Pd
+
+* Install Pd libraries
+
+### Install Harvester Software
+
+* Install this repo
+
+* Test scripts manually
+
+* Celebrate!
 
 ### Autostart software
 
@@ -77,8 +99,6 @@ else
 	pd -stderr -nogui -verbose -audiodev 4 cloudbursting/rpi/cloudbursting.pd >/dev/null 2>&1 &
 fi
 ```
-
-
 
 ## References
 
