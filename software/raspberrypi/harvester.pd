@@ -1,4 +1,4 @@
-#N canvas 78 152 1324 723 10;
+#N canvas 4 23 1362 723 10;
 #N canvas 0 50 450 278 (subpatch) 0;
 #X array harvester 44100 float 0;
 #X coords 0 1 44099 -1 200 140 1;
@@ -422,13 +422,14 @@
 #X obj 1096 -232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X text 1783 -327 10000 = 10 second loop;
-#X obj 964 -82 OSC/routeOSC /1 /2 /3 /4 /5 /6 /7 /8 /record;
 #X obj 1406 -31 sel 49 50 51 52 53 54 55 56 57 58 48;
 #X obj 2111 -314 loadbang;
 #X obj 2112 23 s looper;
 #X obj 1374 -129 r looper;
 #X obj 1554 -294 del 50;
 #X obj 2022 135 del 250;
+#X obj 964 -82 OSC/routeOSC /1 /2 /3 /4 /5 /6 /7 /8 /record /looper
+;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -447,7 +448,7 @@
 #X connect 17 0 91 0;
 #X connect 18 0 70 0;
 #X connect 19 0 46 0;
-#X connect 20 0 271 0;
+#X connect 20 0 270 0;
 #X connect 23 0 24 0;
 #X connect 24 0 26 0;
 #X connect 24 0 33 0;
@@ -633,9 +634,9 @@
 #X connect 197 0 183 0;
 #X connect 198 0 199 0;
 #X connect 198 0 240 0;
-#X connect 199 0 266 0;
+#X connect 199 0 265 0;
 #X connect 200 0 201 0;
-#X connect 201 0 265 0;
+#X connect 201 0 271 0;
 #X connect 204 0 205 0;
 #X connect 205 0 203 0;
 #X connect 207 0 27 0;
@@ -682,7 +683,7 @@
 #X connect 243 0 242 0;
 #X connect 244 0 245 0;
 #X connect 245 0 246 0;
-#X connect 246 0 268 0;
+#X connect 246 0 267 0;
 #X connect 247 0 241 0;
 #X connect 248 0 253 0;
 #X connect 248 1 247 0;
@@ -697,7 +698,6 @@
 #X connect 260 0 261 0;
 #X connect 261 0 262 0;
 #X connect 262 0 263 0;
-#X connect 265 0 202 0;
 #X connect 265 0 12 0;
 #X connect 265 1 19 0;
 #X connect 265 2 18 0;
@@ -707,17 +707,18 @@
 #X connect 265 6 13 0;
 #X connect 265 7 14 0;
 #X connect 265 8 20 0;
-#X connect 266 0 12 0;
-#X connect 266 1 19 0;
-#X connect 266 2 18 0;
-#X connect 266 3 17 0;
-#X connect 266 4 16 0;
-#X connect 266 5 15 0;
-#X connect 266 6 13 0;
-#X connect 266 7 14 0;
-#X connect 266 8 20 0;
-#X connect 266 10 270 0;
-#X connect 267 0 252 0;
-#X connect 269 0 199 0;
-#X connect 270 0 235 0;
-#X connect 271 0 11 0;
+#X connect 265 10 269 0;
+#X connect 266 0 252 0;
+#X connect 268 0 199 0;
+#X connect 269 0 235 0;
+#X connect 270 0 11 0;
+#X connect 271 0 202 0;
+#X connect 271 0 12 0;
+#X connect 271 1 19 0;
+#X connect 271 2 18 0;
+#X connect 271 3 17 0;
+#X connect 271 4 16 0;
+#X connect 271 5 15 0;
+#X connect 271 6 13 0;
+#X connect 271 7 14 0;
+#X connect 271 8 20 0;
