@@ -67,6 +67,8 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 * Install Pd
 
+`sudo apt-get install pd-comport`
+
 * Install Pd libraries
 
 ### Install Harvester Software
