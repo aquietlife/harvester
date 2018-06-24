@@ -67,7 +67,27 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 * Install Pd
 
+`sudo apt-get install pd-comport`
+
+`git clone git://github.com/umlaeute/pd-iemnet.git`
+
+`cd pd-iemnet`
+
+`make`
+
+`sudo make install`
+
 * Install Pd libraries
+
+`wget http://puredata.info/downloads/osc/releases/0.1/OSC-0.1.tar.gz`
+
+`tar -xzvf OSC-0.1.tar.gz`
+
+`cd OSC-0.1/`
+
+`make`
+
+`sudo make install`
 
 ### Install Harvester Software
 
@@ -76,6 +96,11 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 * Install this repo
 
 * Test scripts manually
+
+`python harvester/software/raspberrypi/gpio-osc.py &`
+
+`pd -stderr -nogui -verbose -audiodev 4 harvester/software/raspberrypi/harvester.pd &`
+
 
 * Celebrate!
 
@@ -91,7 +116,7 @@ then
     echo "Python is already runnning"
 else
     echo "Python is not running, attempting to run Python"
-	python cloudbursting/rpi/gpio-osc.py >/dev/null 2>&1 &
+	python harvester/software/raspberrypi/gpio-osc.py >/dev/null 2>&1 &
 fi
 
 if pgrep -x "pd" > /dev/null
@@ -99,7 +124,7 @@ then
     echo "Pd is already running"
 else
     echo "Pd is not running, attempting to run Pd"
-	pd -stderr -nogui -verbose -audiodev 4 cloudbursting/rpi/cloudbursting.pd >/dev/null 2>&1 &
+	pd -stderr -nogui -verbose -audiodev 4 harvester/software/raspberrypi/harvester.pd >/dev/null 2>&1 &
 fi
 ```
 
