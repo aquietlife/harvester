@@ -69,7 +69,25 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 `sudo apt-get install pd-comport`
 
+`git clone git://github.com/umlaeute/pd-iemnet.git`
+
+`cd pd-iemnet`
+
+`make`
+
+`sudo make install`
+
 * Install Pd libraries
+
+`wget http://puredata.info/downloads/osc/releases/0.1/OSC-0.1.tar.gz`
+
+`tar -xzvf OSC-0.1.tar.gz`
+
+`cd OSC-0.1/`
+
+`make`
+
+`sudo make install`
 
 ### Install Harvester Software
 
