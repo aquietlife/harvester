@@ -215,7 +215,7 @@
 -1 -1;
 #X msg 1891 296 0;
 #X obj 1840 316 hsl 20 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1900 1;
+-1 -1 0 1;
 #X floatatom 1774 327 5 0 0 0 - - -, f 5;
 #X obj 1953 508 snapshot~;
 #X obj 1972 484 metro 50;
@@ -241,7 +241,7 @@
 -1 -1;
 #X msg 2146 296 0;
 #X obj 2095 316 hsl 20 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1900 1;
+-1 -1 0 1;
 #X floatatom 2049 325 5 0 0 0 - - -, f 5;
 #X obj 2208 508 snapshot~;
 #X obj 2219 482 metro 50;
@@ -428,8 +428,15 @@
 #X obj 1374 -129 r looper;
 #X obj 1554 -294 del 50;
 #X obj 2022 135 del 250;
-#X obj 964 -82 OSC/routeOSC /1 /2 /3 /4 /5 /6 /7 /8 /record /looper
-;
+#X obj 964 -82 OSC/routeOSC /1 /2 /3 /4 /5 /6 /7 /8 /record /loop;
+#X msg 963 -45 49;
+#X msg 994 -45 50;
+#X msg 1026 -45 51;
+#X msg 1060 -47 52;
+#X msg 1064 -20 53;
+#X msg 1097 -20 54;
+#X msg 1131 -19 55;
+#X msg 1168 -19 56;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -714,11 +721,27 @@
 #X connect 270 0 11 0;
 #X connect 271 0 202 0;
 #X connect 271 0 12 0;
+#X connect 271 0 272 0;
 #X connect 271 1 19 0;
+#X connect 271 1 273 0;
 #X connect 271 2 18 0;
+#X connect 271 2 274 0;
 #X connect 271 3 17 0;
+#X connect 271 3 275 0;
 #X connect 271 4 16 0;
+#X connect 271 4 276 0;
 #X connect 271 5 15 0;
+#X connect 271 5 277 0;
 #X connect 271 6 13 0;
+#X connect 271 6 278 0;
 #X connect 271 7 14 0;
+#X connect 271 7 279 0;
 #X connect 271 8 20 0;
+#X connect 271 9 269 0;
+#X connect 272 0 240 0;
+#X connect 273 0 240 0;
+#X connect 274 0 240 0;
+#X connect 275 0 240 0;
+#X connect 276 0 240 0;
+#X connect 278 0 240 0;
+#X connect 279 0 240 0;
