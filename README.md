@@ -15,23 +15,42 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 ### Install Raspian for Raspberry Pi
 
-* Download Raspian Image
+* Download the latest version of Raspian here: https://www.raspberrypi.org/downloads/raspbian/
 
-* Flash to SD cards (do this before the workshop)
+* Install Raspian to your SD card. On OSX, you can use these instrucitons: https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
 
-* Touch ssh file in boot directory to enable SSH
+* Whle the SD card is still connected, create a file called "ssh" in the boot directory of the card to enable SSH, e.g.:
 
-* Connect RPi to Wifi with battery (can’t do right now)
+`touch /Volumes/boot/ssh`
 
-* Connecting w Ethernet and Raspi power works
+Also, create a file called wpa_supplicant.conf in the boot directory
 
-* Check:
+`vim /Volumes/boot/wpa_supplicant.conf `
 
-* Power w 9V and ethernet - works
+And add the following lines, replacing MySSID and MyPassword with you WiFi's network name and password:
 
-* Power w 9v and wifi - doesn’t work
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
 
-* Once RPi is setup and connected to Wifi, try these instructions:
+network={ 
+ssid="MySSID" 
+psk="MyPassword" 
+}
+
+Afterwards, plug your SD card into your RPI, power it on, and try to SSH into it:
+
+`ssh pi@raspberrypi.local`
+
+The password is `raspberry`
+
+Then run the following command to set up your RPI to keep SSH on:
+
+`sudo raspi-config`
+
+Most importantly, go to Interfacing Options > SSH and enable SSH!
+
+Select finish, then your RPi will reboot. Try connecting again and if everything is working, move on to the next section :D
+
 
 ### Set up EEPROM chip for amp and microphone
 
