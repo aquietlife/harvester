@@ -23,12 +23,13 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 `touch /Volumes/boot/ssh`
 
-Also, create a file called wpa_supplicant.conf in the boot directory
+* Also, create a file called wpa_supplicant.conf in the boot directory
 
 `vim /Volumes/boot/wpa_supplicant.conf `
 
-And add the following lines, replacing MySSID and MyPassword with you WiFi's network name and password:
+* And add the following lines, replacing MySSID and MyPassword with you WiFi's network name and password:
 
+```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
@@ -36,8 +37,9 @@ network={
 ssid="MySSID" 
 psk="MyPassword" 
 }
+```
 
-Afterwards, plug your SD card into your RPI, power it on, and try to SSH into it:
+* Afterwards, plug your SD card into your RPI, power it on, and try to SSH into it:
 
 `ssh pi@raspberrypi.local`
 
