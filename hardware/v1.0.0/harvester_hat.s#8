@@ -6420,6 +6420,21 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="78.74" y1="73.66" x2="78.74" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="66.04" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="142.24" y1="30.48" x2="137.16" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="30.48" x2="137.16" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="142.24" y1="22.86" x2="142.24" y2="30.48" width="0.1524" layer="91"/>
+<label x="137.16" y="73.66" size="1.778" layer="95"/>
+<pinref part="U1" gate="G$1" pin="VCC"/>
+<wire x1="134.62" y1="53.34" x2="119.38" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="53.34" x2="119.38" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="30.48" x2="137.16" y2="30.48" width="0.1524" layer="91"/>
+<junction x="137.16" y="30.48"/>
+<junction x="142.24" y="22.86"/>
+<junction x="137.16" y="27.94"/>
+</segment>
 </net>
 <net name="SDA" class="0">
 <segment>
@@ -6963,23 +6978,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <pinref part="J1" gate="G$1" pin="3"/>
 <pinref part="IC1" gate="A1" pin="VI"/>
 <wire x1="63.5" y1="93.98" x2="78.74" y2="93.98" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="30.48" x2="137.16" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="137.16" y1="30.48" x2="137.16" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="22.86" x2="142.24" y2="30.48" width="0.1524" layer="91"/>
-<label x="137.16" y="73.66" size="1.778" layer="95"/>
-<pinref part="U1" gate="G$1" pin="VCC"/>
-<wire x1="134.62" y1="53.34" x2="119.38" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="53.34" x2="119.38" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="30.48" x2="137.16" y2="30.48" width="0.1524" layer="91"/>
-<junction x="137.16" y="30.48"/>
-<junction x="142.24" y="22.86"/>
-<junction x="137.16" y="27.94"/>
 </segment>
 </net>
 <net name="N$7" class="0">

@@ -1,0 +1,62 @@
+# Parts List
+1. Adafruit I2S MEMS Microphone Breakout - SPH0645LM4H - 2Nos - https://www.adafruit.com/product/3421
+2. Adafruit I2S 3W Class D Amplifier Breakout - MAX98357A - 1No - https://www.adafruit.com/product/3006
+3. Adafruit Perma-Proto HAT for Pi Mini Kit - With EEPROM - 1No - https://www.adafruit.com/product/2314
+
+# Following steps to be completed on the Pi.
+
+#Clone the project onto the pi
+git clone https://github.com/shivasiddharth/custom-voice-hat
+
+1. Turn on i2s support in /boot/config.txt with:
+sudo nano /boot/config.txt
+
+****Uncomment the following****
+#dtparam=i2s=on
+#dtparam=i2c_arm=on
+#dtparam=spi=on
+#dtparam=audio=on
+
+****Add the following new entry****
+dtparam=i2c_vc=on
+
+Save Exit and Reboot.
+
+2. Check for the Hats folder:
+cd /proc/device-tree/
+
+3. Open a new terminal and change directory to eepromutils:
+cd /home/pi/custom-voice-hat/eepromutils
+
+4. Make the EEPROM flasher executable and Flash the EEPROM with the eeprom file:
+sudo chmod +x ./eepflash.sh
+sudo ./eepflash.sh -w -f=voicehat.eep -t=24c32
+
+5. Update raspberry pi kernels:
+sudo apt-get update
+sudo apt-get install raspberrypi-kernel
+
+6. Reboot
+sudo reboot
+
+7. Check if your HAT is recognized,:
+cd /proc/device-tree/
+
+***YOU WILL HAVE A HAT FOLDER NOW WITH VOICE HAT DETAILS***
+
+# Shutdown and Wire the Parts as indicated in the attached wiring diagram
+***CAUTION- Amplifier board should be powered using 5V and the Mics using 3.3v***
+
+# Start your Pi and move into the audio configuration scripts:
+cd /home/pi/custom-voice-hat/audio-config/scripts/
+
+#Make the scripts executable:
+sudo chmod +x ./custom-voice-hat.sh
+sudo chmod +x ./install-i2s.sh
+
+#Run the Executable scripts
+sudo ./custom-voice-hat.sh
+sudo ./install-i2s.sh
+
+****RUN THE custom-voice-hat.sh script untill you get .bak notification****
+****REBOOT and Enjoy your HAT****
