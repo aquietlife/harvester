@@ -10,18 +10,19 @@ c = OSC.OSCClient()
 c.connect(('127.0.0.1', 9001))
 
 # Pin Definitons:
-button1 = 3
-button2 = 5
-button3 = 7
-button4 = 11
-button5 = 13
-button6 = 15
-button7 = 19
-button8 = 21
+button1 = 6
+button2 = 24
+button3 = 12
+button4 = 13
+button5 = 22
+button6 = 17
+button7 = 16
+button8 = 4
 buttonRecord = 23
+buttonLoop = 5
 
 # Pin Setup:
-GPIO.setmode(GPIO.BOARD) # Broadcom pin-numbering scheme
+GPIO.setmode(GPIO.BCM) # Broadcom pin-numbering scheme
 GPIO.setup(button1, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as input w/ pull-up
 GPIO.setup(button2, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as input w/ pull-up
 GPIO.setup(button3, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as input w/ pull-up
@@ -31,6 +32,7 @@ GPIO.setup(button6, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as input
 GPIO.setup(button7, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as input w/ pull-up
 GPIO.setup(button8, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as input w/ pull-up
 GPIO.setup(buttonRecord, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as input w/ pull-up
+GPIO.setup(buttonLoop, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as input w/ pull-up
 
 print("Here we go! Press CTRL+C to exit")
 try:
@@ -97,6 +99,13 @@ try:
                 msg.append("record")
                 c.send(msg)
         	print('Button Record Pressed')
+        	time.sleep(0.2)
+            elif GPIO.input(buttonLoop) == False:
+                msg = OSC.OSCMessage()
+                msg.setAddress("/loop")
+                msg.append("loop")
+                c.send(msg)
+        	print('Button Loop Pressed')
         	time.sleep(0.2)
 
 except KeyboardInterrupt: # If CTRL+C is pressed, exit cleanly:
