@@ -54,35 +54,123 @@ Most importantly, go to Interfacing Options > SSH and enable SSH!
 Select finish, then your RPi will reboot. Try connecting again and if everything is working, move on to the next section :D
 
 
-### Set up EEPROM chip for amp and microphone
+### Set up Harvester Hat Hardware
 
-* https://www.hackster.io/shiva-siddharth/make-your-own-google-voice-hat-9f96ca
+** Part 1 **
 
-* Added bcm2708.vc_i2c_override=1 to cmdline.txt
+* On your RPi, clone this repo
 
-* https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=87715
+`git clone https://github.com/aquietlife/harvester`
 
-* https://www.raspberrypi.org/forums/viewtopic.php?t=108134
+Change into the custom-voice-hat directory
 
-* Enabled i2c arm from raspi-config
+`cd harvester/software/custom-voice-hat/`
+
+At this point, it would probably be nice to install vim ;)
+
+`sudo apt-get install vim`
+
+Turn on i2s support in /boot/config.txt
+
+`sudo vim /boot/config.txt`
+
+Uncomment the following lines:
+
+#dtparam=i2s=on 
+
+#dtparam=i2c_arm=on 
+
+#dtparam=spi=on 
+
+#dtparam=audio=on 
+
+Also add the following new entry:
+
+`dtparam=i2c_vc=on`
+
+Override bcm2708.vc_i2c_override in cmdline.txt
+
+`sudo vim /boot/cmdline.txt`
+
+Add the following line at the end of the line: 
+
+`bcm2708.vc_i2c_override=1`
+
+Finally enabled i2c arm from `raspi-config`
+
+Then reboot your RPi
+
+** Part 2 **
+
+Change directory into the eepromutils folder
+
+`cd ~/harvester/software/custom-voice-hat/eepromutils/`
+
+* Make the EEPROM flasher executable and Flash the EEPROM with the eeprom file:
+
+`sudo chmod +x ./eepflash.sh` 
+
+`sudo ./eepflash.sh -w -f=voicehat.eep -t=24c32`
+
+You should see "Writing..." If you do, good job! If not, repeat the steps in Part 1...
+
+* Update Raspberry Pi kernels and reboot again:
+
+`sudo apt-get update` 
+
+`sudo apt-get install raspberrypi-kernel` 
+
+`sudo reboot`  
+
+** Part 3 **
+
+Check if your HAT is recognized:
+
+`cd /proc/device-tree/`
+
+Start your Pi and move into the audio configuration scripts: 
+
+`cd ~/harvester/software/custom-voice-hat/audio-config/scripts/`
+
+Make the scripts executable: 
+
+`sudo chmod +x ./custom-voice-hat.sh`
+
+`sudo chmod +x ./install-i2s.sh`
+
+Run the Executable scripts:
+
+`sudo ./custom-voice-hat.sh`
+
+`sudo ./install-i2s.sh` 
+
+Run the custom-voice-hat.sh script again until you get .bak notification. 
+
+`sudo ./custom-voice-hat.sh`
+
+Reboot!
+
+
+
 
 ### Test Audio and Microphone
 
-* https://www.raspberrypi-spy.co.uk/2013/06/raspberry-pi-command-line-audio/
+Test your audio:
 
-* https://www.raspberrypi.org/forums/viewtopic.php?t=12358
+* sudo aplay /usr/share/sounds/alsa/Front_Center.wav
+
+Test your microphones:
 
 * sudo arecord test.wav
 
 * sudo aplay test.wav
 
-* sudo aplay /usr/share/sounds/alsa/Front_Center.wav
-
-* https://learn.adafruit.com/usb-audio-cards-with-a-raspberry-pi/recording-audio
 
 ### Install Python OSC server
 
-* install pyOSC
+* Install pyOSC
+
+`pip install pyosc`
 
 ### Install Pd
 
@@ -121,7 +209,6 @@ Select finish, then your RPi will reboot. Try connecting again and if everything
 `python harvester/software/raspberrypi/gpio-osc.py &`
 
 `pd -stderr -nogui -verbose -audiodev 4 harvester/software/raspberrypi/harvester.pd &`
-
 
 * Celebrate!
 
