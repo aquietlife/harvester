@@ -11,13 +11,13 @@ Harvester is a hand-held, portable live sampler that lets you make music with ev
 
 ## Parts
 
-A list of parts and costs can be found on this [Google Sheet](https://docs.google.com/spreadsheets/d/1l5mX_4e5-Yf7ezj4Uyb-OJHwEcOEgB5TfozrZ1NfUMg/edit?usp=sharing)
+A list of parts and costs can be found on this [Google Sheet](https://docs.google.com/spreadsheets/d/1hDYdzhToesEgNGzxmREglWhK1RFRyOljPsczHniATDo/edit?usp=sharing)
 
 ## Installation Instructions
 
 ### Solder up Harvester hat
 
-* Instructions TBD, look at parts list
+* Full documentation TBD; The board itself has layouts for where compoenents should go!
 
 ### Install Raspian for Raspberry Pi
 
