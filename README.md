@@ -104,10 +104,6 @@ Then reboot your RPi
 
 ** Part 2 **
 
-Check if your HAT is recognized:
-
-`cd /proc/device-tree/`
-
 Start your Pi and move into the audio configuration scripts: 
 
 `cd ~/harvester/software/custom-voice-hat/audio-config/scripts/`
