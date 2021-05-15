@@ -146,7 +146,11 @@ Test your microphones:
 
 * Install pyOSC
 
-`pip install pyosc`
+`pip install pyosc` 
+
+You might also need to run it as:
+
+`pip2 install pyosc`
 
 ### Install Pd
 
