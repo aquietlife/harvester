@@ -94,7 +94,7 @@ Override bcm2708.vc_i2c_override in cmdline.txt
 
 `sudo vim /boot/cmdline.txt`
 
-Add the following line at the end of the line: 
+Add the following line at the end of the line with a space after the word "consoles": 
 
 `bcm2708.vc_i2c_override=1`
 
