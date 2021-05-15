@@ -68,10 +68,6 @@ Select finish, then your RPi will reboot. Try connecting again and if everything
 
 `git clone https://github.com/aquietlife/harvester`
 
-Change into the custom-voice-hat directory
-
-`cd harvester/software/custom-voice-hat/`
-
 At this point, it would probably be nice to install vim ;)
 
 `sudo apt-get install vim`
