@@ -108,28 +108,6 @@ Then reboot your RPi
 
 ** Part 2 **
 
-Change directory into the eepromutils folder
-
-`cd ~/harvester/software/custom-voice-hat/eepromutils/`
-
-* Make the EEPROM flasher executable and Flash the EEPROM with the eeprom file:
-
-`sudo chmod +x ./eepflash.sh` 
-
-`sudo ./eepflash.sh -w -f=voicehat.eep -t=24c32`
-
-You should see "Writing..." If you do, good job! If not, repeat the steps in Part 1...
-
-* Update Raspberry Pi kernels and reboot again:
-
-`sudo apt-get update` 
-
-`sudo apt-get install raspberrypi-kernel` 
-
-`sudo reboot`  
-
-** Part 3 **
-
 Check if your HAT is recognized:
 
 `cd /proc/device-tree/`
