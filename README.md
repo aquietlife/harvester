@@ -166,6 +166,8 @@ You might also need to run it as:
 
 `sudo make install`
 
+`cd ..`
+
 * Install Pd libraries
 
 `wget http://puredata.info/downloads/osc/releases/0.1/OSC-0.1.tar.gz`
@@ -178,6 +180,19 @@ You might also need to run it as:
 
 `sudo make install`
 
+`cd ..`
+
+`wget http://puredata.info/downloads/osc/releases/0.2/osc-0.2.tar.gz`
+
+`tar -xzvf OSC-0.2.tar.gz`
+
+`cd osc-0.2/`
+
+`make`
+
+`sudo make install`
+
+`cd ..`
 ### Install Harvester Software
 
 ![Harvester Pd Software](https://raw.githubusercontent.com/aquietlife/harvester/master/software/raspberrypi/harvester-pd.png)
