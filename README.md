@@ -184,7 +184,7 @@ You might also need to run it as:
 
 `wget http://puredata.info/downloads/osc/releases/0.2/osc-0.2.tar.gz`
 
-`tar -xzvf OSC-0.2.tar.gz`
+`tar -xzvf osc-0.2.tar.gz`
 
 `cd osc-0.2/`
 
