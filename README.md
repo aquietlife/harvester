@@ -15,6 +15,10 @@ A list of parts and costs can be found on this [Google Sheet](https://docs.googl
 
 ## Installation Instructions
 
+### NEW INSTRUCITONS RELATING TO GYRO
+
+* From now on we are using Python 3. All code will be updated to reflect this change.
+
 ### Solder up Harvester hat
 
 * Instructions TBD, look at parts list
