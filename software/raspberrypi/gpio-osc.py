@@ -1,13 +1,16 @@
 # External module imports
 import RPi.GPIO as GPIO
 import time
-import OSC
+import board
+import adafruit_bno055
+from pythonosc import udp_client
+
+# Setup board
+i2c = board.I2C()
+sensor = adafruit_bno055.BNO055_I2C(i2c)
 
 #client setup
-c = OSC.OSCClient()
-
-#local host: port 9001
-c.connect(('127.0.0.1', 9001))
+c = udp_client.SimpleUDPClient('127.0.0.1', 9001)
 
 # Pin Definitons:
 button1 = 6
@@ -37,76 +40,49 @@ GPIO.setup(buttonLoop, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as in
 print("Here we go! Press CTRL+C to exit")
 try:
 	while True:
+            #print("gyroscope (rad/sec: {}".format(sensor.gyro))
+            #time.sleep(1)
             if GPIO.input(button1) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/1")
-                msg.append("button1")
-                c.send(msg)
-        	print('Button 1 Pressed')
-        	time.sleep(0.2)
+                c.send_message("/1", "button1")
+                print('Button 1 Pressed')
+                time.sleep(0.2)
             elif GPIO.input(button2) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/2")
-                msg.append("button2")
-                c.send(msg)
-        	print('Button 2 Pressed')
-        	time.sleep(0.2)
+                c.send_message("/2", "button2")
+                print('Button 2 Pressed')
+                time.sleep(0.2)
             elif GPIO.input(button3) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/3")
-                msg.append("button3")
-                c.send(msg)
-        	print('Button 3 Pressed')
-        	time.sleep(0.2)
+                c.send_message("/3", "button3")
+                print('Button 3 Pressed')
+                time.sleep(0.2)
             elif GPIO.input(button4) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/4")
-                msg.append("button4")
-                c.send(msg)
-        	print('Button 4 Pressed')
-        	time.sleep(0.2)
+                c.send_message("/4", "button4")
+                print('Button 4 Pressed')
+                time.sleep(0.2)
             elif GPIO.input(button5) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/5")
-                msg.append("button5")
-                c.send(msg)
-        	print('Button 5 Pressed')
-        	time.sleep(0.2)
+                c.send_message("/5", "button5")
+                print('Button 5 Pressed')
+                time.sleep(0.2)
             elif GPIO.input(button6) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/6")
-                msg.append("button6")
-                c.send(msg)
-        	print('Button 6 Pressed')
-        	time.sleep(0.2)
+                c.send_message("/6", "button6")
+                print('Button 6 Pressed')
+                time.sleep(0.2)
             elif GPIO.input(button7) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/7")
-                msg.append("button7")
-                c.send(msg)
-        	print('Button 7 Pressed')
-        	time.sleep(0.2)
+                c.send_message("/7", "button7")
+                print('Button 7 Pressed')
+                time.sleep(0.2)
             elif GPIO.input(button8) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/8")
-                msg.append("button8")
-                c.send(msg)
-        	print('Button 8 Pressed')
-        	time.sleep(0.2)
+                c.send_message("/8", "button8")
+                print('Button 8 Pressed')
+                time.sleep(0.2)
             elif GPIO.input(buttonRecord) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/record")
-                msg.append("record")
-                c.send(msg)
-        	print('Button Record Pressed')
-        	time.sleep(0.2)
+                c.send_message("/record", "record")
+                print('Button Record Pressed')
+                time.sleep(0.2)
             elif GPIO.input(buttonLoop) == False:
-                msg = OSC.OSCMessage()
-                msg.setAddress("/loop")
-                msg.append("loop")
-                c.send(msg)
-        	print('Button Loop Pressed')
-        	time.sleep(0.2)
+                c.send_message("/loop", "loop")
+                print('Button Loop Pressed')
+                time.sleep(0.2)
+
 
 except KeyboardInterrupt: # If CTRL+C is pressed, exit cleanly:
     GPIO.cleanup() # cleanup all GPIO

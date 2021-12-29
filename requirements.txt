@@ -1,0 +1,2 @@
+adafruit-circuitpython-bno055
+python-osc
