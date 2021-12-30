@@ -40,8 +40,13 @@ GPIO.setup(buttonLoop, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Button pin set as in
 print("Here we go! Press CTRL+C to exit")
 try:
 	while True:
+            # send gyro information
             #print("gyroscope (rad/sec: {}".format(sensor.gyro))
+            c.send_message("/gyro_x", sensor.gyro[0])
+            c.send_message("/gyro_y", sensor.gyro[1])
+            c.send_message("/gyro_z", sensor.gyro[2])
             #time.sleep(1)
+
             if GPIO.input(button1) == False:
                 c.send_message("/1", "button1")
                 print('Button 1 Pressed')
