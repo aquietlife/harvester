@@ -169,9 +169,9 @@
 #X obj 919 -269 vsl 15 128 -180 180 0 0 empty empty empty 0 -9 0 10
 -262144 -1 -1 12700 1;
 #X obj 965 -271 vsl 15 128 -180 180 0 0 empty empty empty 0 -9 0 10
--262144 -1 -1 5585 1;
+-262144 -1 -1 6992 1;
 #X obj 1033 -271 vsl 15 128 -180 180 0 0 empty empty empty 0 -9 0 10
--262144 -1 -1 6723 1;
+-262144 -1 -1 6903 1;
 #X obj 519 -326 OSC/routeOSC /1 /2 /3 /4 /5 /6 /7 /8 /record /loop
 /euler_x /euler_y /euler_z, f 87;
 #X obj 1033 -129 s euler_z;
@@ -350,7 +350,7 @@
 #X floatatom 260 128 5 0 0 0 - - -;
 #X obj 490 282 snapshot~;
 #X obj 509 258 metro 50;
-#X obj 509 233 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 509 233 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 490 309 12 0 0 0 - - -;
 #X floatatom 490 387 12 0 0 0 - - -;
@@ -512,7 +512,7 @@
 #X floatatom 43 182 5 0 0 0 - - -;
 #X obj 222 363 snapshot~;
 #X obj 241 339 metro 50;
-#X obj 241 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 241 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 222 390 12 0 0 0 - - -;
 #X floatatom 222 468 12 0 0 0 - - -;
@@ -605,12 +605,12 @@
 #X connect 21 0 5 0;
 #X connect 21 0 18 0;
 #X restore 951 -9 pd button_8;
-#N canvas 83 225 884 603 recorder 0;
+#N canvas 127 275 884 603 recorder 0;
 #N canvas 0 50 450 278 (subpatch) 0;
 #X array harvester 44100 float 0;
 #X coords 0 1 44099 -1 200 140 1;
 #X restore 305 255 graph;
-#X obj 301 157 adc~;
+#X obj 281 139 adc~;
 #X obj 354 145 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 350 103 del 250;
@@ -622,7 +622,7 @@
 #X connect 3 0 2 0;
 #X connect 4 0 3 0;
 #X restore 1025 -8 pd recorder;
-#N canvas 0 50 492 300 load_sample 1;
+#N canvas 135 277 492 300 load_sample 0;
 #X obj 6 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 6 78 openpanel;
@@ -654,7 +654,7 @@
 #X connect 14 0 15 0;
 #X connect 15 0 9 0;
 #X restore 732 -374 pd load_sample;
-#N canvas 0 50 1020 547 reverb 0;
+#N canvas -40 88 1020 547 reverb 0;
 #X obj 453 466 dac~;
 #X obj 539 288 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -666,7 +666,7 @@
 -1 -1 12700 1;
 #X obj 423 386 freeverb~;
 #X obj 398 191 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 745 1;
+-1 -1 1107 1;
 #X msg 395 231 roomsize \$1;
 #X floatatom 412 209 5 0 0 0 - - -;
 #X floatatom 279 330 5 0 0 0 - - -;
@@ -703,41 +703,93 @@
 #X connect 20 0 21 0;
 #X connect 21 0 6 0;
 #X restore 710 146 pd reverb;
-#N canvas 0 50 788 675 delay 0;
-#X obj -254 64 delwrite~ delay 4000;
-#X obj -107 370 vd~ delay;
-#X obj -105 338 sig~;
-#X floatatom -81 256 5 0 0 0 - - -;
-#X obj -113 460 dac~;
-#X obj -103 421 *~ 1;
-#X obj -41 326 line~;
-#X msg -40 293 \$1 50;
-#X obj -81 229 hsl 128 15 0 900 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3400 1;
-#X floatatom -78 85 5 0 0 0 - - -;
-#X floatatom -79 133 5 0 0 0 - - -;
-#X obj -78 182 abs;
-#X floatatom -80 204 5 0 0 0 - - -;
-#X obj -78 58 r euler_y;
-#X obj -78 109 / 90;
-#X obj -81 156 * 1000;
+#N canvas 158 151 788 555 delay 0;
+#X obj 319 333 vd~ delay;
+#X obj 321 301 sig~;
+#X floatatom 345 219 5 0 0 0 - - -;
+#X obj 325 421 dac~;
+#X obj 323 384 *~ 1;
+#X obj 385 289 line~;
+#X msg 386 256 \$1 50;
+#X obj 345 192 hsl 128 15 0 900 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2852 1;
+#X floatatom 348 48 5 0 0 0 - - -;
+#X floatatom 347 96 5 0 0 0 - - -;
+#X obj 348 145 abs;
+#X floatatom 346 167 5 0 0 0 - - -;
+#X obj 348 21 r euler_y;
+#X obj 348 72 / 90;
+#X obj 345 119 * 1000;
 #X obj -246 19 inlet~;
-#X connect 1 0 5 0;
-#X connect 2 0 1 0;
-#X connect 3 0 7 0;
-#X connect 5 0 4 0;
-#X connect 5 0 4 1;
-#X connect 6 0 1 0;
-#X connect 7 0 6 0;
-#X connect 8 0 3 0;
+#X obj -245 66 delwrite~ delay 5000;
+#X floatatom 127 195 5 0 0 0 - - -;
+#X obj 127 168 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2566 1;
+#X floatatom 130 24 5 0 0 0 - - -;
+#X floatatom 129 72 5 0 0 0 - - -;
+#X obj 130 121 abs;
+#X floatatom 128 143 5 0 0 0 - - -;
+#X obj 130 -3 r euler_y;
+#X obj 130 48 / 90;
+#X obj -137 422 *~;
+#X obj -138 477 dac~;
+#X obj -108 396 hsl 128 15 0 1 0 0 empty empty delay_volume -2 -8 0
+10 -232576 -1 -1 12700 1;
+#X obj -104 180 hsl 128 15 0 5000 0 0 empty empty delay_time -2 -8
+0 10 -232576 -1 -1 1016 1;
+#X floatatom -115 225 5 0 0 0 - - -;
+#X obj 71 378 send~ feedback;
+#X obj 109 295 hsl 128 15 0 1 0 0 empty empty feedback_volume -2 -8
+0 10 -232576 -1 -1 2566 1;
+#X obj 87 324 *~;
+#X obj -107 19 receive~ feedback;
+#X obj -124 273 delread~ delay 0;
+#X obj 127 95 * 1;
+#X msg -111 134 400;
+#X obj -108 98 loadbang;
+#X msg -105 353 1;
+#X obj -104 321 loadbang;
+#X msg 127 221 \$1 50;
+#X obj 121 247 line;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 2 0;
+#X connect 8 0 13 0;
 #X connect 9 0 14 0;
-#X connect 10 0 15 0;
-#X connect 11 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
 #X connect 12 0 8 0;
 #X connect 13 0 9 0;
 #X connect 14 0 10 0;
-#X connect 15 0 11 0;
-#X connect 16 0 0 0;
+#X connect 15 0 16 0;
+#X connect 17 0 40 0;
+#X connect 18 0 17 0;
+#X connect 19 0 24 0;
+#X connect 20 0 35 0;
+#X connect 21 0 22 0;
+#X connect 22 0 18 0;
+#X connect 23 0 19 0;
+#X connect 24 0 20 0;
+#X connect 25 0 26 0;
+#X connect 25 0 26 1;
+#X connect 27 0 25 1;
+#X connect 28 0 29 0;
+#X connect 29 0 34 0;
+#X connect 31 0 32 1;
+#X connect 32 0 30 0;
+#X connect 33 0 16 0;
+#X connect 34 0 25 0;
+#X connect 34 0 32 0;
+#X connect 35 0 21 0;
+#X connect 36 0 28 0;
+#X connect 37 0 36 0;
+#X connect 38 0 27 0;
+#X connect 39 0 38 0;
+#X connect 40 0 41 0;
+#X connect 41 0 31 0;
 #X restore 802 149 pd delay;
 #X connect 0 0 68 0;
 #X connect 1 0 74 0;
