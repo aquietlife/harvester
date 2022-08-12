@@ -11,13 +11,13 @@ Harvester is a hand-held, portable live sampler that lets you make music with ev
 
 ## Parts
 
-A list of parts and costs can be found on this [Google Sheet](https://docs.google.com/spreadsheets/d/1l5mX_4e5-Yf7ezj4Uyb-OJHwEcOEgB5TfozrZ1NfUMg/edit?usp=sharing)
+A list of parts and costs can be found on this [Google Sheet](https://docs.google.com/spreadsheets/d/1hDYdzhToesEgNGzxmREglWhK1RFRyOljPsczHniATDo/edit?usp=sharing)
 
 ## Installation Instructions
 
 ### Solder up Harvester hat
 
-* Instructions TBD, look at parts list
+* Full documentation TBD; The board itself has layouts for where compoenents should go!
 
 ### Install Raspian for Raspberry Pi
 
@@ -68,10 +68,6 @@ Select finish, then your RPi will reboot. Try connecting again and if everything
 
 `git clone https://github.com/aquietlife/harvester`
 
-Change into the custom-voice-hat directory
-
-`cd harvester/software/custom-voice-hat/`
-
 At this point, it would probably be nice to install vim ;)
 
 `sudo apt-get install vim`
@@ -98,7 +94,7 @@ Override bcm2708.vc_i2c_override in cmdline.txt
 
 `sudo vim /boot/cmdline.txt`
 
-Add the following line at the end of the line: 
+Add the following line at the end of the line with a space after the word "consoles": 
 
 `bcm2708.vc_i2c_override=1`
 
@@ -107,32 +103,6 @@ Finally enabled i2c arm from `raspi-config`
 Then reboot your RPi
 
 ** Part 2 **
-
-Change directory into the eepromutils folder
-
-`cd ~/harvester/software/custom-voice-hat/eepromutils/`
-
-* Make the EEPROM flasher executable and Flash the EEPROM with the eeprom file:
-
-`sudo chmod +x ./eepflash.sh` 
-
-`sudo ./eepflash.sh -w -f=voicehat.eep -t=24c32`
-
-You should see "Writing..." If you do, good job! If not, repeat the steps in Part 1...
-
-* Update Raspberry Pi kernels and reboot again:
-
-`sudo apt-get update` 
-
-`sudo apt-get install raspberrypi-kernel` 
-
-`sudo reboot`  
-
-** Part 3 **
-
-Check if your HAT is recognized:
-
-`cd /proc/device-tree/`
 
 Start your Pi and move into the audio configuration scripts: 
 
@@ -176,7 +146,11 @@ Test your microphones:
 
 * Install pyOSC
 
-`pip install pyosc`
+`pip install pyosc` 
+
+You might also need to run it as:
+
+`pip2 install pyosc`
 
 ### Install Pd
 
@@ -192,6 +166,8 @@ Test your microphones:
 
 `sudo make install`
 
+`cd ..`
+
 * Install Pd libraries
 
 `wget http://puredata.info/downloads/osc/releases/0.1/OSC-0.1.tar.gz`
@@ -204,6 +180,19 @@ Test your microphones:
 
 `sudo make install`
 
+`cd ..`
+
+`wget http://puredata.info/downloads/osc/releases/0.2/osc-0.2.tar.gz`
+
+`tar -xzvf osc-0.2.tar.gz`
+
+`cd osc-0.2/`
+
+`make`
+
+`sudo make install`
+
+`cd ..`
 ### Install Harvester Software
 
 ![Harvester Pd Software](https://raw.githubusercontent.com/aquietlife/harvester/master/software/raspberrypi/harvester-pd.png)
