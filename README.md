@@ -2,6 +2,10 @@
 
 ![Harvester in front of Pink Flowers](https://lh4.googleusercontent.com/ybzn-V3RdMSaL2svB6dVLQPCOyI8fXTyXQRxzZ1e-3XDknRX-piEKLtGWgYnYnhpbhU=w2400)
 
+![Harvester on grass](https://lh4.googleusercontent.com/tOCeOl13V2MQ8D2WCQnFR264-YT0-iEhuBFYKd3WFA_1-eqZ98LNCtg2CDjGYreGoa8=w2400)
+
+![Harvester Profile](https://lh3.googleusercontent.com/aQ_9fR6TVJiqACKmQ7RKLym1vWwH3niTJ4ORpXhvrecUZAm32NPPImL6m8N_Ijk703w=w2400)
+
 The Harvester is a hand-held, portable live sampler that lets you make music with everyday sounds. With the instrument, you are able to capture sounds around you (your voice, another musical instrument, environmental noises etc.). The instrument provides an interface that lets you play back the sampled sound based around a musical, pentatonic scale. This allows for a wildly expressive sonic palette that can be used for musical performance and sound art installations.
 
 [Video of Harvester](http://aquiet.life/assets/objects/harvester/harvester_snow.mov)
