@@ -1,11 +1,8 @@
 # Harvester
 
-![Harvester Illustration](https://raw.githubusercontent.com/aquietlife/harvester/master/harvester.jpg)
-Illustration by [Seo Hye Lee](http://www.seohyelee.com/)
+![Harvester in front of Pink Flowers](https://lh4.googleusercontent.com/ybzn-V3RdMSaL2svB6dVLQPCOyI8fXTyXQRxzZ1e-3XDknRX-piEKLtGWgYnYnhpbhU=w2400)
 
-![Harvester Photo](http://aquiet.life/assets/objects/harvester/harvester_sean.jpg)
-
-Harvester is a hand-held, portable live sampler that lets you make music with everyday sounds. With the instrument, you are able to capture sounds around you (your voice, another musical instrument, environmental noises etc.). The instrument provides an interface that lets you play back the sampled sound based around a musical, pentatonic scale. This allows for a wildly expressive sonic palette that can be used for musical performance and sound art installations.
+The Harvester is a hand-held, portable live sampler that lets you make music with everyday sounds. With the instrument, you are able to capture sounds around you (your voice, another musical instrument, environmental noises etc.). The instrument provides an interface that lets you play back the sampled sound based around a musical, pentatonic scale. This allows for a wildly expressive sonic palette that can be used for musical performance and sound art installations.
 
 [Video of Harvester](http://aquiet.life/assets/objects/harvester/harvester_snow.mov)
 
