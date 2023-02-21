@@ -22,6 +22,12 @@ The Harvester is a hand-held, portable live sampler that lets you make music wit
 
 * Looper button for simple looping
 
+* Rechargable LiPo battery (completely portable and battery-powered!)
+
+* Supports wall power/charging as well
+
+## Videos
+
 [Video of Harvester playing in snow](http://aquiet.life/assets/objects/harvester/harvester_snow.mov)
 
 [Video of Harvester playing with gyroscope](https://drive.google.com/file/d/1DpVXfMJ-ruTxa6ZWckGBipXadZL-0WjP/view?usp=sharing)
