@@ -8,7 +8,25 @@
 
 The Harvester is a hand-held, portable live sampler that lets you make music with everyday sounds. With the instrument, you are able to capture sounds around you (your voice, another musical instrument, environmental noises etc.). The instrument provides an interface that lets you play back the sampled sound based around a musical, pentatonic scale. This allows for a wildly expressive sonic palette that can be used for musical performance and sound art installations.
 
-[Video of Harvester](http://aquiet.life/assets/objects/harvester/harvester_snow.mov)
+## Features
+
+* Completely open-source software and hardware
+
+* Audio I/O through onboard microphones, built-in speaker, and 1/4" output
+
+* Gyroscope for 3-axis sensor input for affecting audio output
+
+* Eight buttons for sample playbaack
+
+* Recording button for sampling
+
+* Looper button for simple looping
+
+[Video of Harvester playing in snow](http://aquiet.life/assets/objects/harvester/harvester_snow.mov)
+
+[Video of Harvester playing with gyroscope](https://drive.google.com/file/d/1DpVXfMJ-ruTxa6ZWckGBipXadZL-0WjP/view?usp=sharing)
+
+[Video of Harvester playing in the Everglades](https://drive.google.com/file/d/1D1tRrY7IDSK8U0TIqJ7yX_h4CNaE4mdh/view?usp=share_link)
 
 ## Parts
 
